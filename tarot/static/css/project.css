@@ -18,8 +18,8 @@
   justify-content: center;
 }
 
-.col-form-label {
-  color: white;
+.masthead {
+  height: auto;
 }
 
 #submit {
@@ -28,4 +28,8 @@
 
 #donation {
   padding: 50px;
+}
+
+#queue {
+  padding-top: 30px;
 }
