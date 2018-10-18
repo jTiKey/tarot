@@ -214,8 +214,8 @@ EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.s
 SERVER_EMAIL = 'BUG: Tarot <noreply@jtikey.com>'
 
 EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'jtikey'
-EMAIL_HOST_PASSWORD = 'sendgridLolki890'
+EMAIL_HOST_USER = env('EMAIL_HOST_USER', default='')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD', default='')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
@@ -225,7 +225,7 @@ EMAIL_USE_TLS = True
 ADMIN_URL = 'admin/'
 # https://docs.djangoproject.com/en/dev/ref/settings/#admins
 ADMINS = [
-    ("""jTiKey""", 'slava.khromyak@gmail.com'),
+    ("""jTiKey""", env('ADMINS_EMAIL', default='')),
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#managers
 MANAGERS = ADMINS
