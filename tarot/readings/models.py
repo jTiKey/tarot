@@ -5,7 +5,7 @@ from django.db import models
 
 
 class Reading(TimeStampedModel):
-    question = RichTextField()
+    question = models.TextField()
     response = RichTextField(blank=True)
     email = models.EmailField()
     responded = models.BooleanField(default=False)

@@ -1,6 +1,7 @@
 {% load static %}
 {% load crispy_forms_tags %}
-<form method="post" class="uniForm">
-  {{ form|crispy }}
-  <button type="submit" href="{% static '#about' %}" class="btn btn-primary js-scroll-trigger">Send question.</button>
-</form>
+<div class="container">
+    <form method="post" class="uniForm">
+      {% crispy form %}
+    </form>
+</div>

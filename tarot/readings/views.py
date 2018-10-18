@@ -9,3 +9,4 @@ class IndexView(CreateView):
     model = models.Reading
     form_class = forms.ReadingForm
     template_name = 'index.html'
+    success_url = '/'
