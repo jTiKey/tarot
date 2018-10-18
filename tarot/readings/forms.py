@@ -8,7 +8,10 @@ from . import models
 class ReadingForm(forms.ModelForm):
     class Meta:
         model = models.Reading
-        fields = ['question', 'email', ]
+        fields = ['question', 'name', 'email', ]
+        labels = {
+            'name': 'Your name',
+        }
 
     def __init__(self, *args, **kwargs):
         super(ReadingForm, self).__init__(*args, **kwargs)
@@ -19,7 +22,10 @@ class ReadingForm(forms.ModelForm):
                     'question', css_class='col-sm-12 col-md-12'
                 ),
                 Div(
-                    'email', css_class='col-sm-12 col-md-6'
+                    'name', css_class='col-sm-6 col-md-3'
+                ),
+                Div(
+                    'email', css_class='col-sm-6 col-md-3'
                 ),
                 Div(
                     Submit('submit', 'Send', css_class='btn btn-primary', css_id='submit'),
