@@ -209,15 +209,12 @@ FIXTURE_DIRS = (
 # EMAIL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
-EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.smtp.EmailBackend')
+EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default="sgbackend.SendGridBackend")
 
 SERVER_EMAIL = 'BUG: Tarot <noreply@jtikey.com>'
 
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = env('EMAIL_HOST_USER', default='')
-EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD', default='')
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+SENDGRID_API_KEY = env('SENDGRID_API_KEY', default="sgbackend.SendGridBackend")
+
 
 # ADMIN
 # ------------------------------------------------------------------------------
