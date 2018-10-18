@@ -172,9 +172,6 @@ typings/
 # CMake
 cmake-build-debug/
 
-# Mongo Explorer plugin:
-.idea/**/mongoSettings.xml
-
 ## File-based project format:
 *.iws
 
@@ -188,9 +185,6 @@ out/
 
 # JIRA plugin
 atlassian-ide-plugin.xml
-
-# Cursive Clojure plugin
-.idea/replstate.xml
 
 # Crashlytics plugin (for Android Studio and IntelliJ)
 com_crashlytics_export_strings.xml
