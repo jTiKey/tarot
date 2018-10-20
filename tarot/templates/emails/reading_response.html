@@ -1,3 +1,4 @@
+{% load i18n %}
 <!doctype html>
 <html>
 <head>
@@ -292,16 +293,16 @@
                 <tr>
                   <td>
                     <p>
-                      Hi, {{ object.name }}!
+                      {% trans "Hi" %}, {{ object.name }}!
                     </p>
                     <p>
-                      Your question was:
+                      <strong>{% trans "Your question was" %}:</strong>
                     </p>
                     <p>
                       {{ object.question }}
                     </p>
                     <p>
-                      <s>Your answer:</s>
+                      <strong>{% trans "Your answer" %}:</strong>
                     </p>
                     {% if object.image %}
                     <div>

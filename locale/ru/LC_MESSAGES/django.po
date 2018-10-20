@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-20 22:19+0300\n"
+"POT-Creation-Date: 2018-10-21 00:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -317,34 +317,46 @@ msgstr ""
 msgid "My Profile"
 msgstr ""
 
-#: .\tarot\templates\index.html:54
+#: .\tarot\templates\emails\reading_response.html:296
+msgid "Hi"
+msgstr "Привет"
+
+#: .\tarot\templates\emails\reading_response.html:299
+msgid "Your question was"
+msgstr "Твой вопрос"
+
+#: .\tarot\templates\emails\reading_response.html:305
+msgid "Your answer"
+msgstr "Ответ"
+
+#: .\tarot\templates\index.html:83
 msgid "Free Tarot Reading"
 msgstr "Бесплатные Гадания картами Таро"
 
-#: .\tarot\templates\index.html:56
+#: .\tarot\templates\index.html:85
 msgid "Enter your questions, and wait for the response in an email."
 msgstr "Введи вопрос и ждите отвена на почту."
 
-#: .\tarot\templates\index.html:57
+#: .\tarot\templates\index.html:86
 msgid "The more specific the question, the more clearer the answer."
 msgstr "Чем детальнее вопрос, тем яснее ответ."
 
-#: .\tarot\templates\index.html:75
+#: .\tarot\templates\index.html:104
 msgid ""
 "\n"
 "                  No readings left for today. Try again tomorrow.\n"
 "                "
 msgstr ""
 
-#: .\tarot\templates\index.html:88
+#: .\tarot\templates\index.html:117
 msgid "Available Today"
 msgstr "Свободно сегодня"
 
-#: .\tarot\templates\index.html:104
+#: .\tarot\templates\index.html:133
 msgid "Unanswered"
 msgstr "В очереди"
 
-#: .\tarot\templates\index.html:133
+#: .\tarot\templates\index.html:162
 msgid "If you'd like to donate"
 msgstr "Если хотите пожертвовать"
 
