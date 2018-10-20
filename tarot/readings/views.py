@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import render
 from django.views.generic import CreateView
 
@@ -16,10 +17,12 @@ class IndexView(CreateView):
         context['queued_readings'] = models.Reading.objects.filter(responded=False).count()
         context['done_readings'] = models.Reading.objects.filter(responded=True).count()
         context['left_readings_today'] = models.Reading.limits.left_today()
+        messages.success(self.request, 'Question received! Wait for the email.')
         return context
 
     def form_valid(self, form):
         form.instance.ip_address = self.get_ip()
+        messages.success(self.request, 'Question received! Wait for the email.')
         return super().form_valid(form)
 
     def get_ip(self):

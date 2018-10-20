@@ -4,6 +4,7 @@ Base settings to build other settings files upon.
 import os
 
 import environ
+from django.contrib import messages
 from django.utils.translation import ugettext_lazy as _
 
 ROOT_DIR = environ.Path(__file__) - 3  # (tarot/config/settings/base.py - 3 = tarot/)
@@ -259,3 +260,8 @@ SOCIALACCOUNT_ADAPTER = 'tarot.users.adapters.SocialAccountAdapter'
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+# Bootstrap
+
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger'
+}
