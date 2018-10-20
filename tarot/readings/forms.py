@@ -37,7 +37,7 @@ class ReadingForm(forms.ModelForm):
                     'email', css_class='col-sm-6 col-md-3'
                 ),
                 Div(
-                    Submit('submit', 'Send', css_class='btn btn-primary', css_id='submit'),
+                    Submit('submit', _('Send'), css_class='btn btn-primary', css_id='submit'),
                     css_class='col-sm-12 col-md-6 wrapper'
                 ),
                 css_class='row'
