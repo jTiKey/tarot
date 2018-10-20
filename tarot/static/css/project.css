@@ -57,3 +57,7 @@ body {
 .jumbotron {
   margin: 0;
 }
+
+.counter {
+  font-size: 2rem;
+}

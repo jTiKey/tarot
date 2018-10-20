@@ -78,12 +78,17 @@
               {% if left_readings_today > 0 %}
                 <tr>
                   <td>
-                    {% trans "Left for today" %}:
+                    {% trans "Available Today" %}:
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <button type="button" class="btn btn-success">{{ left_readings_today }}</button>
+                    <button type="button" class="btn btn-success counter">{{ left_readings_today }}</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <br>
                   </td>
                 </tr>
               {% endif %}
@@ -94,7 +99,7 @@
               </tr>
               <tr>
                 <td>
-                  <button type="button" class="btn btn-dark">{{ queued_readings }}</button>
+                  <button type="button" class="btn btn-dark counter">{{ queued_readings }}</button>
                 </td>
               </tr>
             </table>
