@@ -47,7 +47,7 @@ class Reading(TimeStampedModel):
     limits = ReadingManager()
 
     def __str__(self):
-        return f'{self.email} at {self.created}'
+        return '{} at {}'.format(self.email, self.created)
 
     def clean(self):
         # if Reading.limits.daily_limit_reached():
