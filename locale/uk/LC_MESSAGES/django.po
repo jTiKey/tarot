@@ -333,11 +333,11 @@ msgstr ""
 
 #: .\tarot\templates\index.html:88
 msgid "Available Today"
-msgstr ""
+msgstr "Вільно сьогодні"
 
 #: .\tarot\templates\index.html:104
 msgid "Unanswered"
-msgstr ""
+msgstr "В черзі"
 
 #: .\tarot\templates\index.html:133
 msgid "If you'd like to donate"
