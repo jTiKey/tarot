@@ -1,6 +1,10 @@
+from django.core.mail import EmailMessage
 from django.conf import settings
 from django.core.exceptions import ValidationError
+from django.core.mail import send_mail
 from django.db.models import Q
+from django.template import Context
+from django.template.loader import get_template
 from django.utils import timezone
 from model_utils.models import TimeStampedModel
 from ckeditor.fields import RichTextField
@@ -45,6 +49,11 @@ class Reading(TimeStampedModel):
     def __str__(self):
         return f'{self.email} at {self.created}'
 
+    def __init__(self, *args, **kwargs):
+        if not self.responded:
+            self.old_responded = False
+        super().__init__(*args, **kwargs)
+
     def clean(self):
         # if Reading.limits.daily_limit_reached():
         #     raise ValidationError(_("All spots for today were taken. Try again tomorrow."))
@@ -52,3 +61,29 @@ class Reading(TimeStampedModel):
         if Reading.limits.user_limit(email=self.email, ip_address=self.ip_address):
             raise ValidationError(_("You already sent a question today."))
         super(Reading, self).clean()
+
+    def save(self, *args, **kwargs):
+        new_reading = False
+        if not self.id:
+            new_reading = True
+        if self.responded and self.responded != self.old_responded:
+            send_mail(subject='')
+
+        super().save(*args, **kwargs)
+
+        if new_reading:
+            self.send_reading()
+
+    def send_reading(self):
+        template = get_template('emails/reading_received.html')
+        context = Context({'object': self})
+        content = template.render(context)
+        msg = EmailMessage("You've got a reading!", content, to=[self.email, ])
+        msg.send()
+
+    def send_response(self):
+        template = get_template('emails/reading_response.html')
+        context = Context({'object': self})
+        content = template.render(context)
+        msg = EmailMessage("You've got a reading!", content, to=[self.email, ])
+        msg.send()
