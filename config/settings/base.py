@@ -223,11 +223,11 @@ FIXTURE_DIRS = (
 # EMAIL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
-EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default="sgbackend.SendGridBackend")
-
+EMAIL_BACKEND = env.str('DJANGO_EMAIL_BACKEND', default="sgbackend.SendGridBackend")
+WEBSITE_MAIL = 'no-reply@reading.jtikey.com'
 SERVER_EMAIL = 'BUG: Tarot <noreply@jtikey.com>'
 
-SENDGRID_API_KEY = env('SENDGRID_API_KEY', default="sgbackend.SendGridBackend")
+SENDGRID_API_KEY = env.str('SENDGRID_API_KEY', default="")
 
 
 # ADMIN
@@ -236,7 +236,7 @@ SENDGRID_API_KEY = env('SENDGRID_API_KEY', default="sgbackend.SendGridBackend")
 ADMIN_URL = 'admin/'
 # https://docs.djangoproject.com/en/dev/ref/settings/#admins
 ADMINS = [
-    ("""jTiKey""", env('ADMINS_EMAIL', default='')),
+    ("""jTiKey""", env.str('ADMINS_EMAIL', default='')),
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#managers
 MANAGERS = ADMINS
