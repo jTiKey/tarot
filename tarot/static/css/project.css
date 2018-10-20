@@ -5,6 +5,10 @@ body {
     letter-spacing: .0625em;
 }
 
+.alert ul {
+  list-style: none;
+}
+
 .alert-debug {
   color: black;
   background-color: white;
@@ -45,4 +49,11 @@ body {
 
 #queue {
   padding-top: 30px;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.jumbotron {
+  margin: 0;
 }

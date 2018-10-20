@@ -15,6 +15,7 @@ class IndexView(CreateView):
         context = super().get_context_data(**kwargs)
         context['queued_readings'] = models.Reading.objects.filter(responded=False).count()
         context['done_readings'] = models.Reading.objects.filter(responded=True).count()
+        context['left_readings_today'] = models.Reading.limits.left_today()
         return context
 
 
