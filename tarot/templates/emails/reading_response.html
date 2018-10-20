@@ -292,7 +292,7 @@
                 <tr>
                   <td>
                     <p>
-                      Hi, {{ reading.name }}!
+                      Hi, {{ object.name }}!
                     </p>
                     <p>
                       Your question was:
@@ -301,13 +301,15 @@
                       {{ object.question }}
                     </p>
                     <p>
-                      Your answer:
+                      <s>Your answer:</s>
                     </p>
+                    {% if object.image %}
                     <div>
-                      <img src="{{ reading.image }}">
+                      <img src="https://reading.jtikey.com/media/{{ object.image.url }}">
                     </div>
+                    {% endif %}
                     <p>
-                      {{ object.responce|safe }}
+                      {{ object.response|safe }}
                     </p>
                   </td>
                 </tr>

@@ -1,10 +1,9 @@
-from django.core.mail import EmailMessage
+from django.core.mail import EmailMessage, EmailMultiAlternatives
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.core.mail import send_mail
 from django.db.models import Q
-from django.template import Context
-from django.template.loader import get_template
+from django.template.loader import get_template, render_to_string
 from django.utils import timezone
 from model_utils.models import TimeStampedModel
 from ckeditor.fields import RichTextField
@@ -38,6 +37,7 @@ class ReadingManager(models.Manager):
 class Reading(TimeStampedModel):
     question = models.TextField()
     response = RichTextField(blank=True)
+    image = models.ImageField(blank=True)
     name = models.CharField(max_length=50)
     email = models.EmailField()
     responded = models.BooleanField(default=False)
@@ -49,16 +49,11 @@ class Reading(TimeStampedModel):
     def __str__(self):
         return f'{self.email} at {self.created}'
 
-    def __init__(self, *args, **kwargs):
-        if not self.responded:
-            self.old_responded = False
-        super().__init__(*args, **kwargs)
-
     def clean(self):
         # if Reading.limits.daily_limit_reached():
         #     raise ValidationError(_("All spots for today were taken. Try again tomorrow."))
 
-        if Reading.limits.user_limit(email=self.email, ip_address=self.ip_address):
+        if not self.id and Reading.limits.user_limit(email=self.email, ip_address=self.ip_address):
             raise ValidationError(_("You already sent a question today."))
         super(Reading, self).clean()
 
@@ -66,8 +61,9 @@ class Reading(TimeStampedModel):
         new_reading = False
         if not self.id:
             new_reading = True
-        if self.responded and self.responded != self.old_responded:
-            send_mail(subject='')
+        if self.response and not self.responded:
+            self.send_response()
+            self.responded = True
 
         super().save(*args, **kwargs)
 
@@ -76,14 +72,34 @@ class Reading(TimeStampedModel):
 
     def send_reading(self):
         template = get_template('emails/reading_received.html')
-        context = Context({'object': self})
-        content = template.render(context)
-        msg = EmailMessage("You've got a reading!", content, to=[self.email, ])
-        msg.send()
+        context = {'object': self}
+        subject = "You've got a reading!"
+        body = template.render(context)
+
+        email = EmailMultiAlternatives(
+            subject,
+            body,
+            settings.WEBSITE_MAIL,
+            ['simonneighten@gmail.com', ]
+        )
+        email.attach_alternative(body, "text/html")
+        # if file_path:
+        #     email.attach_file(file_path)
+        email.send()
 
     def send_response(self):
         template = get_template('emails/reading_response.html')
-        context = Context({'object': self})
-        content = template.render(context)
-        msg = EmailMessage("You've got a reading!", content, to=[self.email, ])
-        msg.send()
+        context = {'object': self}
+        subject = "jTiKey Reading Response"
+        body = template.render(context)
+
+        email = EmailMultiAlternatives(
+            subject,
+            body,
+            settings.WEBSITE_MAIL,
+            [self.email, ]
+        )
+        email.attach_alternative(body, "text/html")
+        # if self.image:
+        #     email.attach_file(self.image.path)
+        email.send()
