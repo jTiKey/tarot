@@ -4,6 +4,7 @@
 {% load i18n %}
 
 {% get_available_languages as languages %}
+{% get_current_language as LANGUAGE_CODE %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,10 +21,29 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  {% if LANGUAGE_CODE == 'us' %}
+    <title>Free Psychic Tarot Reading</title>
+    <meta name="description" content="
+    Get a free psychic tarot reading daily! Have any question about the past, present or future?
+    Here's the right place to ask about your love, work. Los Angeles, New-York, London, Sydney.
+" />
+  {% elif LANGUAGE_CODE == 'ru' %}
+    <title>Бесплатное ежедневное гадание картами Таро</title>
+    <meta name="description" content="
+    Бесплатное ежедневное гадание картами Таро! Есть вопрос о прошлом, сегодня или будущем?
+    Тут найдешь ответ касательно любви, работы. Москва, Сант-Петербург, Одесса, Харков, Днепр, Киев.
+" />
+  {% elif LANGUAGE_CODE == 'uk' %}
+    <title>Безкоштовне щоденне ворожіння картами Таро</title>
+    <meta name="description" content="
+    Безкоштовне щоденне ворожіння картами Таро! Є питання щодо минулого, теперішнього чи майбутнього?
+    Тут ти знайдеш відповідь щодо кохання, роботи. Київ, Львів, Харків, Одеса, Дніпро.
+" />
+  {% endif %}
 
-  <title>Grayscale - Start Bootstrap Theme</title>
+  <meta name="author" content="jTiKey">
+
+
 
   <!-- Bootstrap core CSS -->
   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
