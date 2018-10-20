@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-19 19:49+0300\n"
+"POT-Creation-Date: 2018-10-20 22:10+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,15 +20,15 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\config\settings\base.py:32
+#: .\config\settings\base.py:33
 msgid "English"
 msgstr ""
 
-#: .\config\settings\base.py:33
+#: .\config\settings\base.py:34
 msgid "Russian"
 msgstr ""
 
-#: .\config\settings\base.py:34
+#: .\config\settings\base.py:35
 msgid "Ukrainian"
 msgstr ""
 
@@ -43,6 +43,18 @@ msgstr "Твое имя"
 #: .\tarot\readings\forms.py:16
 msgid "Your email address"
 msgstr "Твой имейл"
+
+#: .\tarot\readings\forms.py:21
+msgid "You can send one question per day if there are places left."
+msgstr "Ты можешь отправить один вопрос на день, если есть свободные места."
+
+#: .\tarot\readings\models.py:57
+msgid "You already sent a question today."
+msgstr "Вопрос уже был отправлен сегодня."
+
+#: .\tarot\readings\views.py:24
+msgid "Question received! Wait for the email."
+msgstr "Вопрос отправлен! Жди сообщения на почту."
 
 #: .\tarot\templates\account\account_inactive.html:5
 #: .\tarot\templates\account\account_inactive.html:8
@@ -301,27 +313,34 @@ msgstr ""
 msgid "My Profile"
 msgstr ""
 
-#: .\tarot\templates\index.html:39
+#: .\tarot\templates\index.html:54
 msgid "Free Tarot Reading"
 msgstr "Бесплатные Гадания картами Таро"
 
-#: .\tarot\templates\index.html:41
+#: .\tarot\templates\index.html:56
 msgid "Enter your questions, and wait for the response in an email."
 msgstr "Введи вопрос и ждите отвена на почту."
 
-#: .\tarot\templates\index.html:42
+#: .\tarot\templates\index.html:57
 msgid "The more specific the question, the more clearer the answer."
 msgstr "Чем детальнее вопрос, тем яснее ответ."
 
-#: .\tarot\templates\index.html:57
-msgid "Queued Reading"
-msgstr "Очередь"
+#: .\tarot\templates\index.html:75
+msgid ""
+"\n"
+"                  No readings left for today. Try again tomorrow.\n"
+"                "
+msgstr ""
 
-#: .\tarot\templates\index.html:60
-msgid "Readings Done"
-msgstr "Сделано"
+#: .\tarot\templates\index.html:88
+msgid "Available Today"
+msgstr ""
 
-#: .\tarot\templates\index.html:76
+#: .\tarot\templates\index.html:104
+msgid "Unanswered"
+msgstr ""
+
+#: .\tarot\templates\index.html:133
 msgid "If you'd like to donate"
 msgstr "Если хотите пожертвовать"
 
@@ -332,6 +351,12 @@ msgstr ""
 #: .\tarot\users\models.py:11
 msgid "Name of User"
 msgstr ""
+
+#~ msgid "Queued Reading"
+#~ msgstr "Очередь"
+
+#~ msgid "Readings Done"
+#~ msgstr "Сделано"
 
 #~ msgid "Email"
 #~ msgstr "Твой имейл"

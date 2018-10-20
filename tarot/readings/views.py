@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.shortcuts import render
+from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView
 
 from tarot.readings import forms
@@ -21,7 +21,7 @@ class IndexView(CreateView):
 
     def form_valid(self, form):
         form.instance.ip_address = self.get_ip()
-        messages.success(self.request, 'Question received! Wait for the email.')
+        messages.success(self.request, _('Question received! Wait for the email.'))
         return super().form_valid(form)
 
     def get_ip(self):
