@@ -17,6 +17,9 @@ class ReadingForm(forms.ModelForm):
         }
         widgets = {
             'email': forms.TextInput(attrs={'placeholder': 'email@gmail.com'}),
+            'question': forms.TextInput(attrs={
+                'placeholder': _('You can send one question per day if there are places left')
+            }),
         }
 
     def __init__(self, *args, **kwargs):

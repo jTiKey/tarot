@@ -46,8 +46,8 @@ class Reading(TimeStampedModel):
         return f'{self.email} at {self.created}'
 
     def clean(self):
-        if Reading.limits.daily_limit_reached():
-            raise ValidationError(_("All spots for today were taken. Try again tomorrow."))
+        # if Reading.limits.daily_limit_reached():
+        #     raise ValidationError(_("All spots for today were taken. Try again tomorrow."))
 
         if Reading.limits.user_limit(email=self.email, ip_address=self.ip_address):
             raise ValidationError(_("You already sent a question today."))
