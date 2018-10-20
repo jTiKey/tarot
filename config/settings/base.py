@@ -35,7 +35,7 @@ LANGUAGES = (
 )
 
 LOCALE_PATHS = (
-    os.path.join(ROOT_DIR, 'locale'),
+    os.path.join(str(ROOT_DIR), 'locale'),
 )
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#site-id
