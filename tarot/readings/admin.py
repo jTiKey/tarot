@@ -3,8 +3,8 @@ from . import models
 
 
 class ReadingAdmin(admin.ModelAdmin):
-    fields = ('question', 'response', 'image', 'email', 'ip_address', 'responded', 'created', )
-    readonly_fields = ('created', 'ip_address',)
+    fields = ('question', 'name', 'response', 'image', 'email', 'ip_address', 'responded', 'created', )
+    readonly_fields = ('created', 'ip_address', 'name',)
     list_display = ('email', 'created', 'responded', )
 
 
