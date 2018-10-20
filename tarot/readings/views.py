@@ -18,4 +18,18 @@ class IndexView(CreateView):
         context['left_readings_today'] = models.Reading.limits.left_today()
         return context
 
+    def form_valid(self, form):
+        form.instance.ip_address = self.get_ip()
+        return super().form_valid(form)
+
+    def get_ip(self):
+        x_forwarded_for = self.request.META.get('HTTP_X_FORWARDED_FOR')
+
+        if x_forwarded_for:
+            ipaddress = x_forwarded_for.split(',')[-1].strip()
+        else:
+            ipaddress = self.request.META.get('REMOTE_ADDR')
+        return ipaddress
+
+
 
