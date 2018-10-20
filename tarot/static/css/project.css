@@ -1,5 +1,10 @@
 /* These styles are generated from project.scss. */
 
+body {
+    font-family: Nunito, 'IBM Plex Sans', sans-serif;
+    letter-spacing: .0625em;
+}
+
 .alert-debug {
   color: black;
   background-color: white;
@@ -18,8 +23,16 @@
   justify-content: center;
 }
 
-.masthead {
+.masthead h1 {
   height: auto;
+  font-size: 4rem;
+  line-height: 4rem;
+  letter-spacing: .8rem;
+  font-family: 'Varela Round', 'PT Sans Caption', sans-serif;
+}
+
+#title {
+  padding-top: 60px;
 }
 
 #submit {

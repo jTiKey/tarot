@@ -1,6 +1,9 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% load cache %}
+{% load i18n %}
+
+{% get_available_languages as languages %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,8 +21,8 @@
 
   <!-- Custom fonts for this template -->
   <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round|IBM+Plex+Sans|PT+Sans+Caption" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="{% static 'css/grayscale.min.css' %}" rel="stylesheet">
@@ -28,71 +31,89 @@
 </head>
 
 <body id="page-top">
-
-<!-- Header -->
-<header class="masthead">
-  <div class="container d-flex align-items-center">
-    <div class="mx-auto text-center">
-      <h1 class="mx-auto my-0 text-uppercase">Free Tarot Reading</h1>
-      <h3 class="text-white-50 mx-auto mt-2 mb-5">
-        Enter your questions, and wait for the response in an email.
-        The more specific the question, the more clearer the answer.
-      </h3>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-10">
-            <form method="post" class="uniForm text-white-50">
-              {% crispy form %}
-            </form>
-          </div>
-          <div id="queue" class="col-sm-12 col-md-2 text-black-50 d-flex justify-content-center jumbotron">
-            Queued Reading:<br>
-        {{ queued_readings }}<br>
-            <br>
-            Readings Done:<br>
-            <br>
-            {% cache 3600 readings_done %}
-              {{ done_readings }}
-            {% endcache %}
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        {% for lang_code, lang_name in languages %}
+          {% language lang_code %}
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/{{ lang_code }}/">{{ lang_code|upper }}</a>
+            </li>
+          {% endlanguage %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>
+  <!-- Header -->
+  <header class="masthead">
+    <div class="container d-flex align-items-center">
+      <div id="title" class="mx-auto text-center">
+        <h1 class="mx-auto my-0 text-uppercase">{% trans "Free Tarot Reading" %} </h1>
+        <h3 class="text-white-50 mx-auto mt-2 mb-5">
+          {% trans "Enter your questions, and wait for the response in an email." %}<br>
+          {% trans "The more specific the question, the more clearer the answer." %}
+        </h3>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10">
+              <form method="post" class="uniForm text-white-50">
+                {% crispy form %}
+              </form>
+            </div>
+            <div id="queue" class="col-sm-12 col-md-2 text-black-50 d-flex justify-content-center jumbotron">
+              {% trans "Queued Reading" %}:<br>
+              {{ queued_readings }}<br>
+              <br>
+              {% trans "Readings Done" %}:<br>
+              <br>
+              {% cache 3600 readings_done %}
+                {{ done_readings }}
+              {% endcache %}
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<!-- Contact Section -->
-<section id="donation" class="contact-section bg-black">
-  <div class="container">
-    <div class="social d-flex justify-content-center text-white-50">
-      If you'd like to donate:
+  <!-- Contact Section -->
+  <section id="donation" class="contact-section bg-black">
+    <div class="container">
+      <div class="social d-flex justify-content-center text-white-50">
+        {% trans "If you'd like to donate" %}:
+      </div>
+      <div class="wrapper">
+        <a href="https://www.patreon.com/bePatron?u=2472998">
+          <img src="{% static 'img/become_a_patron_button.png' %}">
+        </a>
+        |
+        <a href="https://www.liqpay.ua/ru/checkout/card/jtikey">
+          <img src="{% static 'img/liqpay2.png' %}">
+        </a>
+      </div>
     </div>
-    <div class="wrapper">
-      <a href="https://www.patreon.com/bePatron?u=2472998">
-        <img src="{% static 'img/become_a_patron_button.png' %}">
-      </a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white small text-center text-black-50">
+    <div class="container">
+      {% now "Y" %} &copy; jTiKey | Design by
+      <a href="https://github.com/BlackrockDigital/startbootstrap-grayscale">BlackrockDigital</a>
     </div>
+  </footer>
 
-  </div>
-</section>
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
-<!-- Footer -->
-<footer class="bg-white small text-center text-black-50">
-  <div class="container">
-    {% now "Y" %} &copy; jTiKey | Design by
-    <a href="https://github.com/BlackrockDigital/startbootstrap-grayscale">BlackrockDigital</a>
-  </div>
-</footer>
+  <!-- Plugin JavaScript -->
+  <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
 
-<!-- Bootstrap core JavaScript -->
-<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-
-<!-- Plugin JavaScript -->
-<script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
-
-<!-- Custom scripts for this template -->
-<script src="{% static 'js/grayscale.min.js' %}"></script>
+  <!-- Custom scripts for this template -->
+  <script src="{% static 'js/grayscale.min.js' %}"></script>
 
 </body>
 

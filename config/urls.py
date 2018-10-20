@@ -1,5 +1,7 @@
 from django.conf import settings
+from django.conf.urls.i18n import i18n_patterns
 from django.urls import include, path
+from django.utils.translation import gettext_lazy as _
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
@@ -7,22 +9,13 @@ from django.views import defaults as default_views
 
 from tarot.readings.views import IndexView
 
-urlpatterns = [
+urlpatterns = i18n_patterns(
     path("", IndexView.as_view(), name="home"),
-    path(
-        "about/",
-        TemplateView.as_view(template_name="pages/about.html"),
-        name="about",
-    ),
+)
+
+urlpatterns += [
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
-    # User management
-    path(
-        "users/",
-        include("tarot.users.urls", namespace="users"),
-    ),
-    path("accounts/", include("allauth.urls")),
-    # Your stuff: custom urls includes go here
 ] + static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
 )

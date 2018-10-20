@@ -1,0 +1,336 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-19 19:49+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: .\config\settings\base.py:32
+msgid "English"
+msgstr ""
+
+#: .\config\settings\base.py:33
+msgid "Russian"
+msgstr ""
+
+#: .\config\settings\base.py:34
+msgid "Ukrainian"
+msgstr ""
+
+#: .\tarot\readings\forms.py:14
+msgid "Question"
+msgstr "Питання"
+
+#: .\tarot\readings\forms.py:15
+msgid "Your name"
+msgstr "Твоє ім'я"
+
+#: .\tarot\readings\forms.py:16
+msgid "Your email address"
+msgstr "Поштова скриня"
+
+#: .\tarot\templates\account\account_inactive.html:5
+#: .\tarot\templates\account\account_inactive.html:8
+msgid "Account Inactive"
+msgstr ""
+
+#: .\tarot\templates\account\account_inactive.html:10
+msgid "This account is inactive."
+msgstr ""
+
+#: .\tarot\templates\account\email.html:7
+msgid "Account"
+msgstr ""
+
+#: .\tarot\templates\account\email.html:10
+msgid "E-mail Addresses"
+msgstr ""
+
+#: .\tarot\templates\account\email.html:13
+msgid "The following e-mail addresses are associated with your account:"
+msgstr ""
+
+#: .\tarot\templates\account\email.html:27
+msgid "Verified"
+msgstr ""
+
+#: .\tarot\templates\account\email.html:29
+msgid "Unverified"
+msgstr ""
+
+#: .\tarot\templates\account\email.html:31
+msgid "Primary"
+msgstr ""
+
+#: .\tarot\templates\account\email.html:37
+msgid "Make Primary"
+msgstr ""
+
+#: .\tarot\templates\account\email.html:38
+msgid "Re-send Verification"
+msgstr ""
+
+#: .\tarot\templates\account\email.html:39
+msgid "Remove"
+msgstr ""
+
+#: .\tarot\templates\account\email.html:46
+msgid "Warning:"
+msgstr ""
+
+#: .\tarot\templates\account\email.html:46
+msgid ""
+"You currently do not have any e-mail address set up. You should really add "
+"an e-mail address so you can receive notifications, reset your password, etc."
+msgstr ""
+
+#: .\tarot\templates\account\email.html:51
+msgid "Add E-mail Address"
+msgstr ""
+
+#: .\tarot\templates\account\email.html:56
+msgid "Add E-mail"
+msgstr ""
+
+#: .\tarot\templates\account\email.html:66
+msgid "Do you really want to remove the selected e-mail address?"
+msgstr ""
+
+#: .\tarot\templates\account\email_confirm.html:6
+#: .\tarot\templates\account\email_confirm.html:10
+msgid "Confirm E-mail Address"
+msgstr ""
+
+#: .\tarot\templates\account\email_confirm.html:16
+#, python-format
+msgid ""
+"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
+"address for user %(user_display)s."
+msgstr ""
+
+#: .\tarot\templates\account\email_confirm.html:20
+msgid "Confirm"
+msgstr ""
+
+#: .\tarot\templates\account\email_confirm.html:27
+#, python-format
+msgid ""
+"This e-mail confirmation link expired or is invalid. Please <a href="
+"\"%(email_url)s\">issue a new e-mail confirmation request</a>."
+msgstr ""
+
+#: .\tarot\templates\account\login.html:7
+#: .\tarot\templates\account\login.html:11
+#: .\tarot\templates\account\login.html:44 .\tarot\templates\base.html:68
+msgid "Sign In"
+msgstr ""
+
+#: .\tarot\templates\account\login.html:16
+#, python-format
+msgid ""
+"Please sign in with one\n"
+"of your existing third party accounts. Or, <a href=\"%(signup_url)s\">sign "
+"up</a>\n"
+"for a %(site_name)s account and sign in below:"
+msgstr ""
+
+#: .\tarot\templates\account\login.html:26
+msgid "or"
+msgstr ""
+
+#: .\tarot\templates\account\login.html:33
+#, python-format
+msgid ""
+"If you have not created an account yet, then please\n"
+"<a href=\"%(signup_url)s\">sign up</a> first."
+msgstr ""
+
+#: .\tarot\templates\account\login.html:43
+msgid "Forgot Password?"
+msgstr ""
+
+#: .\tarot\templates\account\logout.html:5
+#: .\tarot\templates\account\logout.html:8
+#: .\tarot\templates\account\logout.html:17 .\tarot\templates\base.html:59
+msgid "Sign Out"
+msgstr ""
+
+#: .\tarot\templates\account\logout.html:10
+msgid "Are you sure you want to sign out?"
+msgstr ""
+
+#: .\tarot\templates\account\password_change.html:6
+#: .\tarot\templates\account\password_change.html:9
+#: .\tarot\templates\account\password_change.html:14
+#: .\tarot\templates\account\password_reset_from_key.html:5
+#: .\tarot\templates\account\password_reset_from_key.html:8
+#: .\tarot\templates\account\password_reset_from_key_done.html:4
+#: .\tarot\templates\account\password_reset_from_key_done.html:7
+msgid "Change Password"
+msgstr ""
+
+#: .\tarot\templates\account\password_reset.html:7
+#: .\tarot\templates\account\password_reset.html:11
+#: .\tarot\templates\account\password_reset_done.html:6
+#: .\tarot\templates\account\password_reset_done.html:9
+msgid "Password Reset"
+msgstr ""
+
+#: .\tarot\templates\account\password_reset.html:16
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll send you "
+"an e-mail allowing you to reset it."
+msgstr ""
+
+#: .\tarot\templates\account\password_reset.html:21
+msgid "Reset My Password"
+msgstr ""
+
+#: .\tarot\templates\account\password_reset.html:24
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr ""
+
+#: .\tarot\templates\account\password_reset_done.html:15
+msgid ""
+"We have sent you an e-mail. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+
+#: .\tarot\templates\account\password_reset_from_key.html:8
+msgid "Bad Token"
+msgstr ""
+
+#: .\tarot\templates\account\password_reset_from_key.html:12
+#, python-format
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
+"a>."
+msgstr ""
+
+#: .\tarot\templates\account\password_reset_from_key.html:18
+msgid "change password"
+msgstr ""
+
+#: .\tarot\templates\account\password_reset_from_key.html:21
+#: .\tarot\templates\account\password_reset_from_key_done.html:8
+msgid "Your password is now changed."
+msgstr ""
+
+#: .\tarot\templates\account\password_set.html:6
+#: .\tarot\templates\account\password_set.html:9
+#: .\tarot\templates\account\password_set.html:14
+msgid "Set Password"
+msgstr ""
+
+#: .\tarot\templates\account\signup.html:6
+msgid "Signup"
+msgstr ""
+
+#: .\tarot\templates\account\signup.html:9
+#: .\tarot\templates\account\signup.html:19 .\tarot\templates\base.html:64
+msgid "Sign Up"
+msgstr ""
+
+#: .\tarot\templates\account\signup.html:11
+#, python-format
+msgid ""
+"Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
+msgstr ""
+
+#: .\tarot\templates\account\signup_closed.html:5
+#: .\tarot\templates\account\signup_closed.html:8
+msgid "Sign Up Closed"
+msgstr ""
+
+#: .\tarot\templates\account\signup_closed.html:10
+msgid "We are sorry, but the sign up is currently closed."
+msgstr ""
+
+#: .\tarot\templates\account\verification_sent.html:5
+#: .\tarot\templates\account\verification_sent.html:8
+#: .\tarot\templates\account\verified_email_required.html:5
+#: .\tarot\templates\account\verified_email_required.html:8
+msgid "Verify Your E-mail Address"
+msgstr ""
+
+#: .\tarot\templates\account\verification_sent.html:10
+msgid ""
+"We have sent an e-mail to you for verification. Follow the link provided to "
+"finalize the signup process. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+
+#: .\tarot\templates\account\verified_email_required.html:12
+msgid ""
+"This part of the site requires us to verify that\n"
+"you are who you claim to be. For this purpose, we require that you\n"
+"verify ownership of your e-mail address. "
+msgstr ""
+
+#: .\tarot\templates\account\verified_email_required.html:16
+msgid ""
+"We have sent an e-mail to you for\n"
+"verification. Please click on the link inside this e-mail. Please\n"
+"contact us if you do not receive it within a few minutes."
+msgstr ""
+
+#: .\tarot\templates\account\verified_email_required.html:20
+#, python-format
+msgid ""
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
+"mail address</a>."
+msgstr ""
+
+#: .\tarot\templates\base.html:55
+msgid "My Profile"
+msgstr ""
+
+#: .\tarot\templates\index.html:39
+msgid "Free Tarot Reading"
+msgstr "Безкоштовне Ворожіння картами Таро"
+
+#: .\tarot\templates\index.html:41
+msgid "Enter your questions, and wait for the response in an email."
+msgstr "Введи питання, і чекай відповіді на пошту."
+
+#: .\tarot\templates\index.html:42
+msgid "The more specific the question, the more clearer the answer."
+msgstr "Чим детальніше питання, тим ясніша відповідь."
+
+#: .\tarot\templates\index.html:57
+msgid "Queued Reading"
+msgstr "В черзі"
+
+#: .\tarot\templates\index.html:60
+msgid "Readings Done"
+msgstr "Зроблено"
+
+#: .\tarot\templates\index.html:76
+msgid "If you'd like to donate"
+msgstr "Якщо бажаєш віддячити"
+
+#: .\tarot\users\forms.py:17
+msgid "This username has already been taken."
+msgstr ""
+
+#: .\tarot\users\models.py:11
+msgid "Name of User"
+msgstr ""
+
+#~ msgid "Email"
+#~ msgstr "Твій імейл"

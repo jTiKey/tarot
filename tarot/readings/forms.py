@@ -1,6 +1,7 @@
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, ButtonHolder, Fieldset, Submit, Div
 from django import forms
+from django.utils.translation import gettext_lazy as _
 
 from . import models
 
@@ -10,7 +11,12 @@ class ReadingForm(forms.ModelForm):
         model = models.Reading
         fields = ['question', 'name', 'email', ]
         labels = {
-            'name': 'Your name',
+            'question': _('Question'),
+            'name': _('Your name'),
+            'email': _('Your email address'),
+        }
+        widgets = {
+            'email': forms.TextInput(attrs={'placeholder': 'email@gmail.com'}),
         }
 
     def __init__(self, *args, **kwargs):
