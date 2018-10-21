@@ -96,8 +96,8 @@
 <!-- Header -->
 <header class="masthead">
   <div class="container d-flex align-items-center">
-    {% block content %}
-      <div id="title" class="mx-auto text-center">
+    <div id="title" class="mx-auto text-center">
+      {% block content %}
         <h3 class="text-white-50 mx-auto mt-2 mb-2">
           {% trans "Enter your questions, and wait for the response in an email." %}<br>
           {% trans "The more specific the question, the more clearer the answer." %}
@@ -174,8 +174,8 @@
             </div>
           </div>
         </section>
-      </div>
-    {% endblock %}
+      {% endblock %}
+    </div>
   </div>
 </header>
 
