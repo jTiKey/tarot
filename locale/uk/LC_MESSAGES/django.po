@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-21 14:34+0300\n"
+"POT-Creation-Date: 2018-10-21 15:16+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -151,7 +151,7 @@ msgstr ""
 
 #: .\tarot\templates\account\login.html:7
 #: .\tarot\templates\account\login.html:11
-#: .\tarot\templates\account\login.html:44 .\tarot\templates\base.html:68
+#: .\tarot\templates\account\login.html:44
 msgid "Sign In"
 msgstr ""
 
@@ -181,7 +181,7 @@ msgstr ""
 
 #: .\tarot\templates\account\logout.html:5
 #: .\tarot\templates\account\logout.html:8
-#: .\tarot\templates\account\logout.html:17 .\tarot\templates\base.html:59
+#: .\tarot\templates\account\logout.html:17
 msgid "Sign Out"
 msgstr ""
 
@@ -258,7 +258,7 @@ msgid "Signup"
 msgstr ""
 
 #: .\tarot\templates\account\signup.html:9
-#: .\tarot\templates\account\signup.html:19 .\tarot\templates\base.html:64
+#: .\tarot\templates\account\signup.html:19
 msgid "Sign Up"
 msgstr ""
 
@@ -312,10 +312,6 @@ msgid ""
 "mail address</a>."
 msgstr ""
 
-#: .\tarot\templates\base.html:55
-msgid "My Profile"
-msgstr ""
-
 #: .\tarot\templates\emails\reading_response.html:296
 msgid "Hi"
 msgstr "Привіт"
@@ -328,11 +324,11 @@ msgstr "Твоє питання"
 msgid "Your answer"
 msgstr "Твоє питання"
 
-#: .\tarot\templates\index.html:79
+#: .\tarot\templates\index.html:78
 msgid "Free Tarot Reading by"
 msgstr "Безкоштовне читання карт Таро від"
 
-#: .\tarot\templates\index.html:81
+#: .\tarot\templates\index.html:80
 msgid "Language"
 msgstr "Мова"
 
@@ -344,30 +340,23 @@ msgstr "Введи питання, і чекай відповіді на пош�
 msgid "The more specific the question, the more clearer the answer."
 msgstr "Чим детальніше питання, тим ясніша відповідь."
 
-#: .\tarot\templates\index.html:121
-msgid ""
-"\n"
-"                  No readings left for today. Try again tomorrow.\n"
-"                "
-msgstr ""
-"\n"
-"                  На сьогодні не залишилось більше ворожінь. Прийдіть "
-"завтра.\n"
-"                "
+#: .\tarot\templates\index.html:122
+msgid "No readings left for today. Try again tomorrow."
+msgstr "На сьогодні не залишилось більше читань карт. Прийдіть завтра."
 
-#: .\tarot\templates\index.html:134
+#: .\tarot\templates\index.html:133
 msgid "Available Today"
 msgstr "Вільно сьогодні"
 
-#: .\tarot\templates\index.html:150
+#: .\tarot\templates\index.html:149
 msgid "Unanswered"
 msgstr "В черзі"
 
-#: .\tarot\templates\index.html:165
+#: .\tarot\templates\index.html:164
 msgid "Done"
 msgstr "Зроблено"
 
-#: .\tarot\templates\index.html:188
+#: .\tarot\templates\index.html:187
 msgid "If you'd like to donate"
 msgstr "Якщо бажаєш віддячити"
 
