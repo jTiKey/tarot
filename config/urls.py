@@ -9,7 +9,11 @@ from django.views import defaults as default_views
 
 from tarot.readings.views import IndexView
 
-urlpatterns = i18n_patterns(
+urlpatterns = [
+    path("", IndexView.as_view(), name="home"),
+]
+
+urlpatterns += i18n_patterns(
     path("", IndexView.as_view(), name="home"),
 )
 
