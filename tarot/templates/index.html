@@ -43,8 +43,7 @@
 
   <meta name="author" content="jTiKey">
 
-
-
+  <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAABShZAA1TtQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIiIiIiIAAAAhEREREgAAACERERESAAAAIRERERIAAAAhEREREgAAACERABESAAAAIRAAARIAAAAhEAABEgAAACEQAAESAAAAIRAAARIAAAAhEQAREgAAACERERESAAAAIRERERIAAAAhEREREgAAACERERESAAAAIiIiIiIADgBwAA4AcAAOAHAADgBwAA4AcAAOAHAADgBwAA4AcAAOAHAADgBwAA4AcAAOAHAADgBwAA4AcAAOAHAADgBwAA" rel="icon" type="image/x-icon" />
   <!-- Bootstrap core CSS -->
   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
@@ -97,46 +96,63 @@
 <!-- Header -->
 <header class="masthead">
   <div class="container d-flex align-items-center">
-    <div id="title" class="mx-auto text-center">
-      <h3 class="text-white-50 mx-auto mt-2 mb-2">
-        {% trans "Enter your questions, and wait for the response in an email." %}<br>
-        {% trans "The more specific the question, the more clearer the answer." %}
-      </h3>
-      <section id="reading">
-        <div class="row">
-          <div class="col-md-10">
-            {% if messages %}
-              <ul class="messages">
-                {% for message in messages %}
-                  <div class="alert alert-{{ message.tags }}">{{ message }}</div>
-                {% endfor %}
-              </ul>
-            {% endif %}
-            {% if left_readings_today > 0 %}
-              <form method="post" class="uniForm text-white-50">
-                {% crispy form %}
-              </form>
-            {% else %}
-              <div class="jumbotron bg-black text-white">
-                <h3>{% blocktrans %}
-                  No readings left for today. Try again tomorrow.
-                {% endblocktrans %}
-                </h3>
-              </div>
-
-            {% endif %}
-          </div>
-          <div id="queue" class="col-sm-12 col-md-2 text-black-50 d-flex jumbotron">
-            <table class="">
+    {% block content %}
+      <div id="title" class="mx-auto text-center">
+        <h3 class="text-white-50 mx-auto mt-2 mb-2">
+          {% trans "Enter your questions, and wait for the response in an email." %}<br>
+          {% trans "The more specific the question, the more clearer the answer." %}
+        </h3>
+        <section id="reading">
+          <div class="row">
+            <div class="col-md-10">
+              {% if messages %}
+                <ul class="messages">
+                  {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                  {% endfor %}
+                </ul>
+              {% endif %}
               {% if left_readings_today > 0 %}
+                <form method="post" class="uniForm text-white-50">
+                  {% crispy form %}
+                </form>
+              {% else %}
+                <div class="jumbotron bg-black text-white">
+                  <h3>{% blocktrans %}
+                    No readings left for today. Try again tomorrow.
+                  {% endblocktrans %}
+                  </h3>
+                </div>
+
+              {% endif %}
+            </div>
+            <div id="queue" class="col-sm-12 col-md-2 text-black-50 d-flex jumbotron">
+              <table class="">
+                {% if left_readings_today > 0 %}
+                  <tr>
+                    <td>
+                      {% trans "Available Today" %}:
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button type="button" class="btn btn-success counter">{{ left_readings_today }}</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <br>
+                    </td>
+                  </tr>
+                {% endif %}
                 <tr>
                   <td>
-                    {% trans "Available Today" %}:
+                    {% trans "Unanswered" %}:
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <button type="button" class="btn btn-success counter">{{ left_readings_today }}</button>
+                    <button type="button" class="btn btn-dark counter">{{ queued_readings }}</button>
                   </td>
                 </tr>
                 <tr>
@@ -144,38 +160,22 @@
                     <br>
                   </td>
                 </tr>
-              {% endif %}
-              <tr>
-                <td>
-                  {% trans "Unanswered" %}:
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <button type="button" class="btn btn-dark counter">{{ queued_readings }}</button>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <br>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  {% trans "Done" %}: {{ done_readings }}
-                </td>
-              </tr>
-            </table>
-            {#              {% trans "Readings Done" %}:<br>#}
-            {#              <br>#}
-            {#              {% cache 3600 readings_done %}#}
-            {#                {{ done_readings }}#}
-            {#              {% endcache %}#}
+                <tr>
+                  <td>
+                    {% trans "Done" %}: {{ done_readings }}
+                  </td>
+                </tr>
+              </table>
+              {#              {% trans "Readings Done" %}:<br>#}
+              {#              <br>#}
+              {#              {% cache 3600 readings_done %}#}
+              {#                {{ done_readings }}#}
+              {#              {% endcache %}#}
+            </div>
           </div>
-        </div>
-      </section>
-    </div>
-
+        </section>
+      </div>
+    {% endblock %}
   </div>
 </header>
 
