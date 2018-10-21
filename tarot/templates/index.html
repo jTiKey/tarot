@@ -57,12 +57,30 @@
   <link href="{% static 'css/grayscale.min.css' %}" rel="stylesheet">
   <link href="{% static 'css/project.css' %}" rel="stylesheet">
 
+  <style>
+    {% if LANGUAGE_CODE != 'en' %}
+      h3 {
+        font-size: 1rem;
+      }
+      @media (min-width: 992px) {
+        h3 {
+          font-size: 1.5rem;
+        }
+      }
+    {% endif %}
+  </style>
+
 </head>
 
 <body id="page-top">
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
   <div class="container">
+    <a class="navbar-brand js-scroll-trigger" href="#reading">{% trans "Free Tarot Reading by" %} jTiKey</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      {% trans "Language" %}
+      <i class="fas fa-bars"></i>
+    </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         {% for lang_code, lang_name in languages %}
@@ -80,12 +98,11 @@
 <header class="masthead">
   <div class="container d-flex align-items-center">
     <div id="title" class="mx-auto text-center">
-      <h1 class="mx-auto my-0 text-uppercase">{% trans "Free Tarot Reading" %} </h1>
-      <h3 class="text-white-50 mx-auto mt-2 mb-5">
+      <h3 class="text-white-50 mx-auto mt-2 mb-2">
         {% trans "Enter your questions, and wait for the response in an email." %}<br>
         {% trans "The more specific the question, the more clearer the answer." %}
       </h3>
-      <div class="container">
+      <section id="reading">
         <div class="row">
           <div class="col-md-10">
             {% if messages %}
@@ -156,25 +173,31 @@
             {#              {% endcache %}#}
           </div>
         </div>
-      </div>
+      </section>
     </div>
+
   </div>
 </header>
 
+
+
 <!-- Contact Section -->
-<section id="donation" class="contact-section bg-black">
+<section id="donation" class="bg-black">
   <div class="container">
     <div class="social d-flex justify-content-center text-white-50">
       {% trans "If you'd like to donate" %}:
     </div>
-    <div class="wrapper">
-      <a href="https://www.patreon.com/bePatron?u=2472998">
-        <img src="{% static 'img/become_a_patron_button.png' %}">
-      </a>
-      |
-      <a href="https://www.liqpay.ua/ru/checkout/card/jtikey">
-        <img src="{% static 'img/liqpay2.png' %}">
-      </a>
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <a href="https://www.patreon.com/bePatron?u=2472998" target="_blank">
+          <img src="{% static 'img/become_a_patron_button.png' %}">
+        </a>
+      </div>
+      <div class="col-sm-12 text-center">
+        <a href="https://www.liqpay.ua/{{ lang_code }}/checkout/card/jtikey" target="_blank">
+          <img src="{% static 'img/liqpay2.png' %}">
+        </a>
+      </div>
     </div>
   </div>
 </section>

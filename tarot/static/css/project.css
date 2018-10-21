@@ -27,12 +27,9 @@ body {
   justify-content: center;
 }
 
-.masthead h1 {
-  height: auto;
-  font-size: 4rem;
-  line-height: 4rem;
-  letter-spacing: .8rem;
-  font-family: 'Varela Round', 'PT Sans Caption', sans-serif;
+.masthead {
+  padding: 2rem 0 0 0;
+  height: 100%;
 }
 
 #title {
@@ -45,6 +42,10 @@ body {
 
 #donation {
   padding: 50px;
+}
+
+#reading {
+  padding: 1rem;
 }
 
 #queue {
