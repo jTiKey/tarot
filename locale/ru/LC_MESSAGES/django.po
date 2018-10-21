@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-21 00:56+0300\n"
+"POT-Creation-Date: 2018-10-21 14:34+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -329,19 +329,23 @@ msgstr "Твой вопрос"
 msgid "Your answer"
 msgstr "Ответ"
 
-#: .\tarot\templates\index.html:83
-msgid "Free Tarot Reading"
-msgstr "Бесплатные Гадания картами Таро"
+#: .\tarot\templates\index.html:79
+msgid "Free Tarot Reading by"
+msgstr "Бесплатное чтение карт Таро от"
 
-#: .\tarot\templates\index.html:85
+#: .\tarot\templates\index.html:81
+msgid "Language"
+msgstr "Язык"
+
+#: .\tarot\templates\index.html:102
 msgid "Enter your questions, and wait for the response in an email."
 msgstr "Введи вопрос и ждите отвена на почту."
 
-#: .\tarot\templates\index.html:86
+#: .\tarot\templates\index.html:103
 msgid "The more specific the question, the more clearer the answer."
 msgstr "Чем детальнее вопрос, тем яснее ответ."
 
-#: .\tarot\templates\index.html:104
+#: .\tarot\templates\index.html:121
 msgid ""
 "\n"
 "                  No readings left for today. Try again tomorrow.\n"
@@ -351,15 +355,19 @@ msgstr ""
 "                  На сегодня больше не осталось гаданий. Прийдите завтра.\n"
 "                "
 
-#: .\tarot\templates\index.html:117
+#: .\tarot\templates\index.html:134
 msgid "Available Today"
 msgstr "Свободно сегодня"
 
-#: .\tarot\templates\index.html:133
+#: .\tarot\templates\index.html:150
 msgid "Unanswered"
 msgstr "В очереди"
 
-#: .\tarot\templates\index.html:162
+#: .\tarot\templates\index.html:165
+msgid "Done"
+msgstr "Сделано"
+
+#: .\tarot\templates\index.html:188
 msgid "If you'd like to donate"
 msgstr "Если хотите пожертвовать"
 
