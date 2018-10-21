@@ -138,11 +138,17 @@
                   <button type="button" class="btn btn-dark counter">{{ queued_readings }}</button>
                 </td>
               </tr>
+              <tr>
+                <td>
+                  <br>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  {% trans "Done" %}: {{ done_readings }}
+                </td>
+              </tr>
             </table>
-
-            <br>
-
-            <br>
             {#              {% trans "Readings Done" %}:<br>#}
             {#              <br>#}
             {#              {% cache 3600 readings_done %}#}
