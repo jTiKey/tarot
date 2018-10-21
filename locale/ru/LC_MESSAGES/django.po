@@ -347,6 +347,9 @@ msgid ""
 "                  No readings left for today. Try again tomorrow.\n"
 "                "
 msgstr ""
+"\n"
+"                  На сегодня больше не осталось гаданий. Прийдите завтра.\n"
+"                "
 
 #: .\tarot\templates\index.html:117
 msgid "Available Today"
