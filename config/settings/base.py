@@ -78,9 +78,9 @@ DJANGO_APPS = [
 ]
 THIRD_PARTY_APPS = [
     'crispy_forms',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
+    # 'allauth',
+    # 'allauth.account',
+    # 'allauth.socialaccount',
     'rest_framework',
     'ckeditor',
 ]
@@ -264,4 +264,12 @@ SOCIALACCOUNT_ADAPTER = 'tarot.users.adapters.SocialAccountAdapter'
 
 MESSAGE_TAGS = {
     messages.ERROR: 'danger'
+}
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Full',
+        'height': 'auto',
+        'width': 'auto',
+    },
 }
