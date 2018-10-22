@@ -7,19 +7,14 @@ from django.contrib import admin
 from django.views import defaults as default_views
 
 from tarot.readings.views import IndexView
-from config.sitemaps import StaticViewSitemap, StaticViewi18nSitemap
+from config.sitemaps import StaticViewi18nSitemap
 
 sitemaps = {
-    'static': StaticViewSitemap,
     'static_i18n': StaticViewi18nSitemap,
 }
 
-urlpatterns = [
+urlpatterns = i18n_patterns(
     path("", IndexView.as_view(), name="index"),
-]
-
-urlpatterns += i18n_patterns(
-    path("", IndexView.as_view(), name="index_lang"),
 )
 
 urlpatterns += [
