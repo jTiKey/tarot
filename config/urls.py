@@ -1,25 +1,32 @@
 from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
 from django.urls import include, path
-from django.utils.translation import gettext_lazy as _
+from django.contrib.sitemaps.views import sitemap
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.views.generic import TemplateView
 from django.views import defaults as default_views
 
 from tarot.readings.views import IndexView
+from config.sitemaps import StaticViewSitemap, StaticViewi18nSitemap
+
+sitemaps = {
+    'static': StaticViewSitemap,
+    'static_i18n': StaticViewi18nSitemap,
+}
 
 urlpatterns = [
-    path("", IndexView.as_view(), name="home"),
+    path("", IndexView.as_view(), name="index"),
 ]
 
 urlpatterns += i18n_patterns(
-    path("", IndexView.as_view(), name="home"),
+    path("", IndexView.as_view(), name="index_lang"),
 )
 
 urlpatterns += [
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+         name='django.contrib.sitemaps.views.sitemap')
 ] + static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
 )
