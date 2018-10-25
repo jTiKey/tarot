@@ -17,6 +17,7 @@ class IndexView(CreateView):
         context['queued_readings'] = models.Reading.objects.filter(responded=False).count()
         context['done_readings'] = models.Reading.objects.filter(responded=True).count()
         context['left_readings_today'] = models.Reading.limits.left_today()
+        context['last_readings'] = models.Reading.objects.exclude(image__exact='').order_by('-created')[:6]
         return context
 
     def form_valid(self, form):

@@ -185,7 +185,26 @@
     </div>
   </div>
 </header>
+<!-- Contact Section -->
+<section id="spreads" class="bg-black">
+  <div class="container">
+    <div class="row">
+     <div class="col-md-12 text-center">
+       <h3 class="text-white">Latest spreads:</h3>
+     </div>
 
+      {% for reading in last_readings %}
+        <div class="col-sm-2">
+          <a href="{{ reading.image.url }}" target="_blank">
+            <img class="img-thumbnail img-fluid" src="{{ reading.image.url }}"><br>
+            {{ reading.created }}
+          </a>
+        </div>
+
+      {% endfor %}
+    </div>
+  </div>
+</section>
 
 
 <!-- Contact Section -->
