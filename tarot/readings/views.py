@@ -33,5 +33,10 @@ class IndexView(CreateView):
             ipaddress = self.request.META.get('REMOTE_ADDR')
         return ipaddress
 
+    def get_success_url(self):
+        return self.request.META.get('HTTP_REFERER', '/')
+
+
+
 
 
