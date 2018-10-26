@@ -58,17 +58,17 @@ class Reading(TimeStampedModel):
         super(Reading, self).clean()
 
     def save(self, *args, **kwargs):
-        new_reading = False
-        if not self.id:
-            new_reading = True
+        # new_reading = False
+        # if not self.id:
+        #     new_reading = True
         if self.response and not self.responded:
             self.send_response()
             self.responded = True
 
         super().save(*args, **kwargs)
-
-        if new_reading:
-            self.send_reading()
+        #
+        # if new_reading:
+        #     self.send_reading()
 
     def send_reading(self):
         template = get_template('emails/reading_received.html')
